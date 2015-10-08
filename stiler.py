@@ -193,6 +193,16 @@ def left():
     raise_window(":ACTIVE:")
 
 
+def leftThird():
+    Width=MaxWidth/3-1
+    Height=MaxHeight - WinTitle -WinBorder
+    PosX=LeftPadding
+    PosY=TopPadding
+    move_active(PosX,PosY,Width,Height)
+    raise_window(":ACTIVE:")
+
+
+
 def right():
     Width=MaxWidth/2-1
     Height=MaxHeight - WinTitle - WinBorder 
@@ -200,6 +210,24 @@ def right():
     PosY=TopPadding
     move_active(PosX,PosY,Width,Height)
     raise_window(":ACTIVE:")
+
+
+def rightThird():
+    Width=MaxWidth/3-1
+    Height=MaxHeight - WinTitle - WinBorder 
+    PosX=2*MaxWidth/3
+    PosY=TopPadding
+    move_active(PosX,PosY,Width,Height)
+    raise_window(":ACTIVE:")
+
+def centerThird():
+    Width=MaxWidth/3-1
+    Height=MaxHeight - WinTitle - WinBorder 
+    PosX=1*MaxWidth/3
+    PosY=TopPadding
+    move_active(PosX,PosY,Width,Height)
+    raise_window(":ACTIVE:")
+
     
 
 def compare_win_list(newlist,oldlist):
@@ -306,4 +334,9 @@ elif sys.argv[1] == "maximize":
     maximize()
 elif sys.argv[1] == "max_all":
     max_all()
-
+elif sys.argv[1] == "centerThird":
+    centerThird()
+elif sys.argv[1] == "leftThird":
+    leftThird()
+elif sys.argv[1] == "rightThird":
+    rightThird()
